@@ -67,6 +67,6 @@ public class Login extends AppCompatActivity {
         else if (_username.equals("student") && _pass.equals("pass123"))
             startActivity(new Intent(this, StudentDashboard.class));
         else
-            startActivity(new Intent(this, MainActivity.class));
+            Toast.makeText(this, "Login Error", Toast.LENGTH_SHORT).show();
     }
 }
