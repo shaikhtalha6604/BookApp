@@ -71,7 +71,7 @@ public class SessionManager {
     }
 
     public Boolean CheckLogin(){
-        if (userSession.getBoolean(IS_LOGIN,true)){
+        if (userSession.getBoolean(IS_LOGIN,false)){
             return true;
         }else {
             return false;
@@ -106,7 +106,7 @@ public class SessionManager {
     }
 
     public Boolean CheckRememberMe(){
-        if (userSession.getBoolean(IS_REMEMBERME,true)){
+        if (userSession.getBoolean(IS_REMEMBERME,false)){
             return true;
         }else {
             return false;

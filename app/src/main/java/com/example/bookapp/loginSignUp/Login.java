@@ -15,12 +15,13 @@ import com.example.bookapp.R;
 import com.example.bookapp.dashboard.AdminDashboard;
 import com.example.bookapp.dashboard.StudentDashboard;
 import com.example.bookapp.database.SessionManager;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
 
 public class Login extends AppCompatActivity {
 
-    EditText username, password;
+    TextInputEditText username, password;
     Button btn_login;
     CheckBox rememberMe;
 
@@ -33,7 +34,7 @@ public class Login extends AppCompatActivity {
 
         SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_REMEMBERME);
         if (sessionManager.CheckRememberMe()){
-            HashMap<String,String> rememberMeDetails = new HashMap<>();
+            HashMap<String,String> rememberMeDetails = sessionManager.GetRememberMeDetailsFromSession();
             username.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONUSERNAME));
             password.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPASSWORD));
         }
