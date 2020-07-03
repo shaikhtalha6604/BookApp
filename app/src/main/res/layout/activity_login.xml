@@ -80,6 +80,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
+                    android:id="@+id/remember_me"
                     style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

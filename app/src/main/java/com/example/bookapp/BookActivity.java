@@ -39,7 +39,7 @@ public class BookActivity extends AppCompatActivity {
         if (bookName.equals("Nursery1")){
             pdfView.fromAsset(bookName + ".pdf").load();
         }else {
-            pdfView.fromAsset("sound.pdf")
+            pdfView.fromAsset("Nursery1.pdf")
                     .swipeHorizontal(true)
                     .pageSnap(true)
                     .autoSpacing(true)
@@ -51,21 +51,25 @@ public class BookActivity extends AppCompatActivity {
     void AddImagesToList(String bookName){
 
         if (bookName.equals("Nursery1")){
-            images.add(R.drawable.nur1);
-            images.add(R.drawable.nur2);
-            images.add(R.drawable.nur3);
-            images.add(R.drawable.nur4);
-            images.add(R.drawable.nur5);
+            if (pageCurlView != null){
+                images.add(R.drawable.nur1);
+                images.add(R.drawable.nur2);
+                images.add(R.drawable.nur3);
+                images.add(R.drawable.nur4);
+                images.add(R.drawable.nur5);
 
-            pageCurlView.setCurlView(images);
-            pageCurlView.setCurlSpeed(600);
+                pageCurlView.setCurlView(images);
+                pageCurlView.setCurlSpeed(600);
+            }
         }else {
-            pdfView.fromAsset("nursery1.pdf")
-                    .swipeHorizontal(true)
-                    .pageSnap(true)
-                    .autoSpacing(true)
-                    .pageFling(true)
-                    .load();
+            if (pdfView !=null){
+                pdfView.fromAsset("Nursery1.pdf")
+                        .swipeHorizontal(true)
+                        .pageSnap(true)
+                        .autoSpacing(true)
+                        .pageFling(true)
+                        .load();
+            }
         }
     }
 }
