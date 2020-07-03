@@ -86,7 +86,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Remember Me"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:theme="@style/checkBox" />
 
                 <Button
                     android:layout_width="wrap_content"
