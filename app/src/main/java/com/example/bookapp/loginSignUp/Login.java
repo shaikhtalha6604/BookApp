@@ -58,6 +58,9 @@ public class Login extends AppCompatActivity {
         String _username = username.getText().toString().trim();
         String _pass = password.getText().toString().trim();
 
+        SessionManager userSessionManager = new SessionManager(this, SessionManager.SESSION_USERSESSION);
+        userSessionManager.CreateLoginSession("", _username, "", _pass, "","","");
+
         if (rememberMe.isChecked()){
             SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_REMEMBERME);
             sessionManager.CreateRememberMeSession(_username, _pass);
@@ -65,7 +68,7 @@ public class Login extends AppCompatActivity {
 
         if (_username.equals("admin") && _pass.equals("pass123"))
             startActivity(new Intent(this, AdminDashboard.class));
-        else if (_username.equals("student") && _pass.equals("pass123"))
+        else if (_username.equals("myname") && _pass.equals("pass123"))
             startActivity(new Intent(this, StudentDashboard.class));
         else
             Toast.makeText(this, "Login Error", Toast.LENGTH_SHORT).show();
